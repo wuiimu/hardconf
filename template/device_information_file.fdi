@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+File              : <file_name>
+Destination       : <directory where you should copy this file>
+Device Info       : <info about the device>
+Repository        : git://github.com/wuiimu/hardconf.git
+HAL Documentation : http://people.freedesktop.org/~david/hal-spec/hal-spec.html
+ -->
+
+<deviceinfo version="0.2">
+    <device>
+        <match key="" string="">
+        </match>
+    </device>
+</deviceinfo>
