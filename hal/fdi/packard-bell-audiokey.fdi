@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+File              : packard-bell-audiokey.fdi
+Destination       : /etc/hal/fdi/information/
+Device Info       : Packard Bell USB AudioKey / AudioKey FM
+                    [http://support.packardbell.com/it/item/index.php?i=platform_audiokeyFM]
+Repository        : git://github.com/wuiimu/hardconf.git
+HAL Documentation : http://people.freedesktop.org/~david/hal-spec/hal-spec.html
+ -->
+
+<deviceinfo version="0.2">
+    <device>
+        <match key="block.is_volume" bool="true">
+            <match key="volume.fsusage" string="filesystem">
+                <match key="@block.storage_device:storage.bus" string="usb">
+                    <match key="@block.storage_device:storage.vendor" string="Packard">
+                        <match key="@block.storage_device:storage.model" string="Portable Player">
+                            <merge key="volume.label" type="string">AudioKey</merge>
+                        </match>
+                    </match>
+                </match>
+            </match>
+        </match>
+    </device>
+</deviceinfo>
