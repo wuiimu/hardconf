@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+File              : sandisk-cruzer-info.fdi
+Destination       : /etc/hal/fdi/information/
+Device Info       : Sandisk Cruzer Micro USB Flash Drive 16Gb
+                    [http://www.sandisk.com/Products/Item(2645)-SDCZ6-016G-A11-SanDisk_Cruzer_Micro_16GB_Black.aspx]
+Repository        : git://github.com/wuiimu/hardconf.git
+HAL Documentation : http://people.freedesktop.org/~david/hal-spec/hal-spec.html
+ -->
+
+<deviceinfo version="0.2">
+    <device>
+        <match key="block.is_volume" bool="true">
+            <match key="volume.fsusage" string="filesystem">
+                <match key="@block.storage_device:storage.bus" string="usb">
+                    <match key="@block.storage_device:storage.vendor" string="SanDisk">
+                        <match key="@block.storage_device:storage.model" string="Cruzer">
+                            <!-- Information -->
+                            <merge key="volume.label" type="string">Cruzer</merge>
+                        </match>
+                    </match>
+                </match>
+            </match>
+        </match>
+    </device>
+</deviceinfo>
