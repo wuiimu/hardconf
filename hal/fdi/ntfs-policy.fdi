@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+File              : ntfs-policy.fdi
+Destination       : /etc/hal/fdi/policy/
+Device Info       : NTFS filesystems
+Repository        : git://github.com/wuiimu/hardconf.git
+HAL Documentation : http://people.freedesktop.org/~david/hal-spec/hal-spec.html
+ -->
+
+<deviceinfo version="0.2">
+    <device>
+        <match key="block.is_volume" bool="true">
+            <match key="volume.fsusage" string="filesystem">                
+                <match key="volume.fstype" string="ntfs">
+                    <match key="@block.storage_device:storage.bus" string="usb">
+                        <!-- Policies -->
+                        <merge key="volume.fstype" type="string">ntfs-3g</merge>
+                        <merge key="volume.policy.mount_filesystem" type="string">ntfs-3g</merge>
+                        <merge key="volume.policy.desired_mount_point" type="string">cruzer</merge>
+                    </match>
+                </match>
+            </match>
+        </match>
+    </device>
+</deviceinfo>
